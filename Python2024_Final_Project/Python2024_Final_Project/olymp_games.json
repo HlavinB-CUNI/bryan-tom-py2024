@@ -1,0 +1,156 @@
+{
+  "olympic_games_year": {
+    "1896": {
+      "city": "athens",
+      "seasons": [ "summer" ]
+    },
+    "1900": {
+      "city": "paris",
+      "seasons": [ "summer" ]
+    },
+    "1904": {
+      "city": "st-louis",
+      "seasons": [ "summer" ]
+    },
+    "1908": {
+      "city": "london",
+      "seasons": [ "summer" ]
+    },
+    "1912": {
+      "city": "stockholm",
+      "seasons": [ "summer" ]
+    },
+    "1920": {
+      "city": "antwerp",
+      "seasons": [ "summer" ]
+    },
+    "1924": {
+      "city": [ "paris", "chamonix" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1928": {
+      "city": [ "amsterdam", "st-moritz" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1932": {
+      "city": [ "los-angeles", "lake-placid" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1936": {
+      "city": [ "berlin", "garmisch-partenkirchen" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1948": {
+      "city": [ "london", "st-moritz" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1952": {
+      "city": [ "oslo", "helsinki" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1956": {
+      "city": [ "melbourne", "cortina-d-ampezzo" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1960": {
+      "city": [ "rome", "squaw-valley" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1964": {
+      "city": [ "tokyo", "innsbruck" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1968": {
+      "city": [ "mexico-city", "grenoble" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1972": {
+      "city": [ "munich", "sapporo" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1976": {
+      "city": [ "montreal", "innsbruck" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1980": {
+      "city": [ "moscow", "lake-placid" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1984": {
+      "city": [ "los-angeles", "sarajevo" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1988": {
+      "city": [ "seoul", "calgary" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1992": {
+      "city": [ "barcelona", "albertville" ],
+      "seasons": [ "summer", "winter" ]
+    },
+    "1994": {
+      "city": "lillehammer",
+      "seasons": [ "winter" ]
+    },
+    "1996": {
+      "city": "atlanta",
+      "seasons": [ "summer" ]
+    },
+    "1998": {
+      "city": "nagano",
+      "seasons": [ "winter" ]
+    },
+    "2000": {
+      "city": "sydney",
+      "seasons": [ "summer" ]
+    },
+    "2002": {
+      "city": "salt-lake-city",
+      "seasons": [ "winter" ]
+    },
+    "2004": {
+      "city": "athens",
+      "seasons": [ "summer" ]
+    },
+    "2006": {
+      "city": "turin",
+      "seasons": [ "winter" ]
+    },
+    "2008": {
+      "city": "beijing",
+      "seasons": [ "summer" ]
+    },
+    "2010": {
+      "city": "vancouver",
+      "seasons": [ "winter" ]
+    },
+    "2012": {
+      "city": "london",
+      "seasons": [ "summer" ]
+    },
+    "2014": {
+      "city": "sochi",
+      "seasons": [ "winter" ]
+    },
+    "2016": {
+      "city": "rio",
+      "seasons": [ "summer" ]
+    },
+    "2018": {
+      "city": "pyeongchang",
+      "seasons": "winter"
+    },
+    "2020": {
+      "city": "tokyo",
+      "seasons": [ "summer" ]
+    },
+    "2022": {
+      "city": "beijing",
+      "seasons": [ "winter" ]
+    },
+    "2024": {
+      "city": "paris",
+      "seasons": [ "summer" ]
+    }
+  }
+}
