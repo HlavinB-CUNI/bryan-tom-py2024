@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\olymp_funcs.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\olymp_games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\Python2024_Final_Project.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\Python2024_Final_Project.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\olymp_games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
@@ -50,13 +50,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Python2024_Final_Project.py",
               "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\Python2024_Final_Project.py",
               "RelativeDocumentMoniker": "Python2024_Final_Project\\Python2024_Final_Project.py",
               "ToolTip": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\Python2024_Final_Project.py",
               "RelativeToolTip": "Python2024_Final_Project\\Python2024_Final_Project.py",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-30T12:03:51.133Z",
               "EditorCaption": ""
@@ -69,20 +69,20 @@
               "RelativeDocumentMoniker": "Python2024_Final_Project\\olymp_funcs.py",
               "ToolTip": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_funcs.py",
               "RelativeToolTip": "Python2024_Final_Project\\olymp_funcs.py",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAVAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-30T12:05:27.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "olymp_games.json",
               "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_games.json",
               "RelativeDocumentMoniker": "Python2024_Final_Project\\olymp_games.json",
               "ToolTip": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_games.json",
               "RelativeToolTip": "Python2024_Final_Project\\olymp_games.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIoAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-11-30T12:20:39.159Z",
               "EditorCaption": ""
