@@ -1,27 +1,27 @@
 {
   "olympic_games_year": {
     "1896": {
-      "city": "athens",
+      "city": [ "athens" ],
       "seasons": [ "summer" ]
     },
     "1900": {
-      "city": "paris",
+      "city": [ "paris" ],
       "seasons": [ "summer" ]
     },
     "1904": {
-      "city": "st-louis",
+      "city": [ "st-louis" ],
       "seasons": [ "summer" ]
     },
     "1908": {
-      "city": "london",
+      "city": [ "london" ],
       "seasons": [ "summer" ]
     },
     "1912": {
-      "city": "stockholm",
+      "city": [ "stockholm" ],
       "seasons": [ "summer" ]
     },
     "1920": {
-      "city": "antwerp",
+      "city": [ "antwerp" ],
       "seasons": [ "summer" ]
     },
     "1924": {
@@ -89,67 +89,67 @@
       "seasons": [ "summer", "winter" ]
     },
     "1994": {
-      "city": "lillehammer",
+      "city": [ "lillehammer" ],
       "seasons": [ "winter" ]
     },
     "1996": {
-      "city": "atlanta",
+      "city": [ "atlanta" ],
       "seasons": [ "summer" ]
     },
     "1998": {
-      "city": "nagano",
+      "city": [ "nagano" ],
       "seasons": [ "winter" ]
     },
     "2000": {
-      "city": "sydney",
+      "city": [ "sydney" ],
       "seasons": [ "summer" ]
     },
     "2002": {
-      "city": "salt-lake-city",
+      "city": [ "salt-lake-city" ],
       "seasons": [ "winter" ]
     },
     "2004": {
-      "city": "athens",
+      "city": [ "athens" ],
       "seasons": [ "summer" ]
     },
     "2006": {
-      "city": "turin",
+      "city": [ "turin" ],
       "seasons": [ "winter" ]
     },
     "2008": {
-      "city": "beijing",
+      "city": [ "beijing" ],
       "seasons": [ "summer" ]
     },
     "2010": {
-      "city": "vancouver",
+      "city": [ "vancouver" ],
       "seasons": [ "winter" ]
     },
     "2012": {
-      "city": "london",
+      "city": [ "london" ],
       "seasons": [ "summer" ]
     },
     "2014": {
-      "city": "sochi",
+      "city": [ "sochi" ],
       "seasons": [ "winter" ]
     },
     "2016": {
-      "city": "rio",
+      "city": [ "rio" ],
       "seasons": [ "summer" ]
     },
     "2018": {
-      "city": "pyeongchang",
-      "seasons": "winter"
+      "city": [ "pyeongchang" ],
+      "seasons": [ "winter" ]
     },
     "2020": {
-      "city": "tokyo",
+      "city": [ "tokyo" ],
       "seasons": [ "summer" ]
     },
     "2022": {
-      "city": "beijing",
+      "city": [ "beijing" ],
       "seasons": [ "winter" ]
     },
     "2024": {
-      "city": "paris",
+      "city": [ "paris" ],
       "seasons": [ "summer" ]
     }
   }
