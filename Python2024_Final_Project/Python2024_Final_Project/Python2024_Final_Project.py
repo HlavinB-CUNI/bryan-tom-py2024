@@ -21,7 +21,7 @@ valid_games = False
 # Reading in JSON file preliminarily (contains basic Olypmics data)
 f = open('olymp_games.json')
 olymp_games = json.load(f)
-df_olymp = pd.DataFrame.from_dict(olymp_games['olympic_games_year'])
+df_olymp = pd.DataFrame.transpose(pd.DataFrame.from_dict(olymp_games['olympic_games_year']))
 
 # Step 1-3:
 # Prompt the user to ask which olympics to start with and end with 

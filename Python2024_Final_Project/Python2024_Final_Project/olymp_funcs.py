@@ -17,8 +17,10 @@ def is_valid_olympic_year(year, games_json):
 
 def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     # making a dataframe from the dictionary (2 rows, 38 columns for every olympics)
-    print(df_olymp)
-    #df_filtered = pd.DataFrame.from_dict(df_olymp['olympic_games_year'])
+    df_olymp.index = df_olymp.index.astype(int)
+    df_filter1 = df_olymp.loc[pd.to_numeric(start_games):pd.to_numeric(end_games)]
+    df_filter2 = df_filter1.loc[(df_filter1['seasons'].astype(str) == f"['{szn}']") | (df_filter1['seasons'].astype(str) == f"['summer', 'winter']") ]
+    print(df_filter2)
 
     # making a shorthand list to simplify things later
     #list_olympics = list(games_json['olympic_games_year'].keys())
