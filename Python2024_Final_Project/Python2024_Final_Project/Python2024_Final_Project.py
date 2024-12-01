@@ -10,7 +10,7 @@ import pandas as pd
 import json
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
-from olymp_funcs import is_valid_olympic_year
+from olymp_funcs import is_valid_olympic_year, scrape_olympics_websites
 
 
 valid_games = False
@@ -21,13 +21,13 @@ valid_games = False
 # Reading in JSON file preliminarily (contains basic Olypmics data)
 f = open('olymp_games.json')
 olymp_games = json.load(f)
-#print(olymp_games['olympic_games_year'].keys())
+df_olymp = pd.DataFrame.from_dict(olymp_games['olympic_games_year'])
 
 # Step 1-3:
 # Prompt the user to ask which olympics to start with and end with 
 print("Please type in which Olympic Games you wish to START this comparison with.")
 
-# Asking for starting year
+# Asking for starting year (using dictionary processes to start)
 while valid_games == False:
     starting_games = input("Enter year of Olympic Games: ")
     if any(x.isalpha() for x in starting_games):
@@ -78,22 +78,8 @@ while valid_games == False:
 # Step 4:           
 # Begin Scraping Process
 print(F"Proceeding to scrape all olympics websites between (and including) the two years for the {szn} olympics.")
+df_total = scrape_olympics_websites(starting_games, ending_games, szn, df_olymp)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#print(f"You have selected {starting_games}. You will be comparing {starting_games}")
 
 # make this web scrape into a function that converts into proper data format for data fraome
 # Load the 2016 website medal count
