@@ -5,6 +5,7 @@ import requests
 import numpy as np
 import pandas as pd
 import json
+import validators
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 
@@ -22,16 +23,21 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     df_filter2 = df_filter1.loc[(df_filter1['seasons'].astype(str) == f"['{szn}']") | (df_filter1['seasons'].astype(str) == f"['summer', 'winter']") ]
     
     #scraping operations here
-    for season in df_filter2['seasons']:
+    for city, season in enumerate(df_filter2['seasons']):
         # if the season is summer
-        print(season)
-        print(f"Value: {season}, Type: {type(season)}")
         if ((('summer' in season)) & (szn == 'summer')):
-            print("Doable for summer!")
- 
+            print(df_filter2['city'].iloc[city][0]) 
+            print(validators.url(f'https://olympics.com/en/olympic-games/paris-2024/medals?displayAsWebViewlight=true&displayAsWebView=true'))
+            
         # if the season is winter
         elif ((('winter' in season)) & (szn == 'winter')):
-            print("Doable for winter!")
+            if (len(df_filter2['city'].iloc[city]) == 1):
+                print(df_filter2['city'].iloc[city][0])
+                print(validators.url(f'https://olympics.com/en/olympic-games/paris-2024/medals?displayAsWebViewlight=true&displayAsWebView=true'))
+            else:
+                print(df_filter2['city'].iloc[city][1]) # winter olympic location (if 2 locations in a year) is always in the 2nd index location
+                print(validators.url(f'https://olympics.com/en/olympic-games/paris-2024/medals?displayAsWebViewlight=true&displayAsWebView=true'))
+                
             
     # cycle through the dataframe, scraping each website
     #for 
