@@ -17,6 +17,9 @@ def is_valid_olympic_year(year, games_json):
         return False    
 
 def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
+    
+    print(F"Proceeding to scrape all olympics websites between (and including) the two years for the {szn} olympics.")
+
     # splitting the URL to prevent IDE issues
     url_1 = "https://"
     url_2 = "olympics.com/en/olympic-games/"
