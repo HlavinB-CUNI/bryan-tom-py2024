@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_funcs.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\olymp_funcs.py||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\Python2024_Final_Project.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\Python2024_Final_Project.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_funcs.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|solutionrelative:Python2024_Final_Project\\olymp_funcs.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7FA606D-3DD2-4571-A540-9F70F6186635}|Python2024_Final_Project\\Python2024_Final_Project.pyproj|C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -25,7 +25,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,26 +49,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Python2024_Final_Project.py",
               "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\Python2024_Final_Project.py",
               "RelativeDocumentMoniker": "Python2024_Final_Project\\Python2024_Final_Project.py",
               "ToolTip": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\Python2024_Final_Project.py",
               "RelativeToolTip": "Python2024_Final_Project\\Python2024_Final_Project.py",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAFkAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-30T12:03:51.133Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "olymp_funcs.py",
               "DocumentMoniker": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_funcs.py",
               "RelativeDocumentMoniker": "Python2024_Final_Project\\olymp_funcs.py",
               "ToolTip": "C:\\Users\\Bryan\\source\\repos\\bryan-tom-py2024\\Python2024_Final_Project\\Python2024_Final_Project\\olymp_funcs.py",
               "RelativeToolTip": "Python2024_Final_Project\\olymp_funcs.py",
-              "ViewState": "AQIAABgAAAAAAAAAAADwv0EAAACjAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAE4AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-11-30T12:05:27.754Z",
               "EditorCaption": ""
