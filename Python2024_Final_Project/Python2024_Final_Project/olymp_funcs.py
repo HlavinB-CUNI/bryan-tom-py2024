@@ -72,6 +72,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
                 df_total_results[f'{df_filter2.index[city]}_total'] = ""
 
                 # Gathering countries and medal counts
+                print(f"Getting {df_filter2['city'].iloc[city][0]} medals...")
                 soup_countries_list = [tag.get_text() for tag in list(soup.find_all('span', attrs = {'data-cy':'country-name'}))]
                 soup_medals_list = [tag.get_text() for tag in list(soup.find_all('span', attrs = {'data-cy':'ocs-text-module'}))]
 
@@ -79,33 +80,22 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
                 for i in range(len(soup_countries_list)):
                     if soup_countries_list[i-1] in df_total_results['Country'].values:
                         # find the exact row it is in, and put the 4 values for each medal placement there
-                        #print(df_total_results.index[df_total_results['Country']==soup_countries_list[i-1]].tolist())
-                        print("match")
+                        country_match = df_total_results.index[(df_total_results['Country'] == soup_countries_list[i-1])].to_list()
+                        df_total_results.loc[country_match[0], f'{df_filter2.index[city]}_gold'] = soup_medals_list[4*(i-1)]
+                        df_total_results.loc[country_match[0], f'{df_filter2.index[city]}_silver'] = soup_medals_list[4*(i-1)+1]
+                        df_total_results.loc[country_match[0], f'{df_filter2.index[city]}_bronze'] = soup_medals_list[4*(i-1)+2]
+                        df_total_results.loc[country_match[0], f'{df_filter2.index[city]}_total'] = soup_medals_list[4*(i-1)+3]
+                        
+                        # one column off somewhere probably due to soup not being 100% accurate according to i, make it according to i
                     else:
                         df_total_results = df_total_results.append({'Country': soup_countries_list[i-1], 
-                                                                    f'{df_filter2.index[city]}_gold': soup_medals_list[4*(i-1)+1],   \
-                                                                    f'{df_filter2.index[city]}_silver': soup_medals_list[4*(i-1)+2], \
-                                                                    f'{df_filter2.index[city]}_bronze': soup_medals_list[4*(i-1)+3], \
-                                                                    f'{df_filter2.index[city]}_total': soup_medals_list[4*(i-1)+4]}, ignore_index = True)
+                                                                    f'{df_filter2.index[city]}_gold': soup_medals_list[4*(i-1)],   \
+                                                                    f'{df_filter2.index[city]}_silver': soup_medals_list[4*(i-1)+1], \
+                                                                    f'{df_filter2.index[city]}_bronze': soup_medals_list[4*(i-1)+2], \
+                                                                    f'{df_filter2.index[city]}_total': soup_medals_list[4*(i-1)+3]}, ignore_index = True)
 
-                        #print(df_total_results.index[df_total_results['Country']==soup_countries_list[i-1]].tolist())
-
-                #lengths of countries lists in 2002 and 2006 differ, so errors are generated- need to fix
-                #df_results.insert(0, 'Country', soup_countries_list, True)
-                #df_results[f'{df_filter2.index[city]}_gold'] = soup_medals_list[0::4]
-                #df_results[f'{df_filter2.index[city]}_silver'] = soup_medals_list[1::4]
-                #df_results[f'{df_filter2.index[city]}_bronze'] = soup_medals_list[2::4]
-                #df_results[f'{df_filter2.index[city]}_total'] = soup_medals_list[3::4]
-
-                # putting them as the index for the data frame
-                #for i in range(soup_countries_list):
-                #    if df_results.index.isin(soup_countries_list[i-1]):
-                #        # find the exact row it is in, and put the 4 values for each medal placement there
-                #    else:
-                #        # add a new row for medal placement and add the index for the country in questions
-                        
-                #print(soup_medalfilt2)
-                time.sleep(random.uniform(0.05, 0.5))
+                # timer just in case the scraper does things too fast
+                time.sleep(random.uniform(0.05, 0.75))
             else:
                 print(df_filter2.index[city]) # for year
                 print(df_filter2['city'].iloc[city][1]) # winter olympic location (if 2 locations in a year) is always in the 2nd index location
