@@ -1,6 +1,7 @@
 import datetime
 import time
 import random
+from operator import index
 import requests
 import numpy as np
 import pandas as pd
@@ -28,6 +29,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     df_olymp.index = df_olymp.index.astype(int)
     df_filter1 = df_olymp.loc[pd.to_numeric(start_games):pd.to_numeric(end_games)]
     df_filter2 = df_filter1.loc[(df_filter1['seasons'].astype(str) == f"['{szn}']") | (df_filter1['seasons'].astype(str) == f"['summer', 'winter']") ]
+    df_results = pd.DataFrame()
     
     #scraping operations here
     for city, season in enumerate(df_filter2['seasons']):
@@ -37,6 +39,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
             print(df_filter2['city'].iloc[city][0]) # for city
             url_specific = f"{url_1}{url_2}{df_filter2['city'].iloc[city][0]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true"
             
+            # parsing
             req = Request(
             url= url_specific, 
             headers={'User-Agent': 'Mozilla/5.0'})
@@ -54,14 +57,27 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
                 print(df_filter2['city'].iloc[city][0]) # for city
                 url_specific = f"{url_1}{url_2}{df_filter2['city'].iloc[city][0]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true"
                 
+                # parsing
                 req = Request(
                 url= url_specific, 
                 headers={'User-Agent': 'Mozilla/5.0'})
                 page = urlopen(req).read()
                 soup = BeautifulSoup(page, 'html.parser')
-                soup_medalfilt = soup.find_all(title= "Gold")
-                soup_filt = soup.find_all(class_ = "OcsText-styles__StyledText-sc-bf256156-0 cjPVFu text--sm-body")
-                print(soup_medalfilt)
+                
+                # Gathering countries and medal counts
+                soup_countries_list = [tag.get_text() for tag in list(soup.find_all('span', attrs = {'data-cy':'country-name'}))]
+                
+                # putting them as the index for the data frame
+                #for i in range(soup_countries_list):
+                 #   if df_results.index.isin(soup_countries_list[i-1]):
+                 #       continue
+                 #   else:
+                        
+                        
+                # if the countries are not in the data frame, add them
+                
+                
+                #print(soup_medalfilt2)
                 time.sleep(random.uniform(0.05, 0.5))
             else:
                 print(df_filter2.index[city]) # for year

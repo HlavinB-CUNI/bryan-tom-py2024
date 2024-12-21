@@ -14,7 +14,6 @@ from olymp_funcs import is_valid_olympic_year, scrape_olympics_websites
 from user_questions import ask_for_years
 
 
-
 # --------------------
 # Step 0: Reading in JSON file preliminarily (contains basic Olypmics data)
 f = open('olymp_games.json')
