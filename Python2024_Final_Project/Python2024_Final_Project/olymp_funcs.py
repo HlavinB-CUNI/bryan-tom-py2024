@@ -11,6 +11,8 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 
        
+pd.set_option('display.max_columns', None)
+
 def is_valid_olympic_year(year, games_json):
     if (year in games_json['olympic_games_year'].keys()):
         return True
@@ -80,7 +82,12 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
                         #print(df_total_results.index[df_total_results['Country']==soup_countries_list[i-1]].tolist())
                         print("match")
                     else:
-                        df_total_results = df_total_results.append({'Country': soup_countries_list[i-1]}, ignore_index = True)
+                        df_total_results = df_total_results.append({'Country': soup_countries_list[i-1], 
+                                                                    f'{df_filter2.index[city]}_gold': soup_medals_list[4*(i-1)+1],   \
+                                                                    f'{df_filter2.index[city]}_silver': soup_medals_list[4*(i-1)+2], \
+                                                                    f'{df_filter2.index[city]}_bronze': soup_medals_list[4*(i-1)+3], \
+                                                                    f'{df_filter2.index[city]}_total': soup_medals_list[4*(i-1)+4]}, ignore_index = True)
+
                         #print(df_total_results.index[df_total_results['Country']==soup_countries_list[i-1]].tolist())
 
                 #lengths of countries lists in 2002 and 2006 differ, so errors are generated- need to fix
