@@ -17,6 +17,7 @@ def is_valid_olympic_year(year, games_json):
     else:
         return False    
 
+
 def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     
     print(F"Proceeding to scrape all olympics websites between (and including) the two years specified for the {szn} olympics.")
@@ -116,5 +117,6 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     # printing everthing I can 
     df_total_results.set_index('Country', inplace = True)            
     print(df_total_results)
+    return df_total_results
 
     

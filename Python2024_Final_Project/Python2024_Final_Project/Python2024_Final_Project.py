@@ -23,7 +23,7 @@ df_olymp = pd.DataFrame.transpose(pd.DataFrame.from_dict(olymp_games['olympic_ga
 # Step 1-3: Prompt the user to ask which olympics to start with and end with 
 starting_games, ending_games, season = ask_for_years(olymp_games)
           
-# Step 4: Begin Scraping Process
+# Step 4-5: Begin Scraping Process
 df_total = scrape_olympics_websites(starting_games, ending_games, season, df_olymp)
 
 
