@@ -43,7 +43,7 @@ def ask_for_years(olymp_games):
         if any(x.isalpha() for x in ending_games):
             print("You have not imputted a year of a valid olympic games. Please input again: ")
         else:
-            if (is_valid_olympic_year(ending_games, olymp_games) == True & (pd.to_numeric(ending_games) > pd.to_numeric(starting_games))):
+            if (is_valid_olympic_year(ending_games, olymp_games) == True & (pd.to_numeric(ending_games) >= pd.to_numeric(starting_games))):
                  if szn in olymp_games['olympic_games_year'][f'{ending_games}']['seasons']:
                     print(f"There was an olympic games in {ending_games} for {szn}.")
                     valid_games = True
