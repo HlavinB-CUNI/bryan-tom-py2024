@@ -72,7 +72,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     # Setting 'Country' as the index value
     df_total_results.set_index('Country', inplace = True)
     
-    return df_total_results
+    return df_total_results.sort_values('Country')
 
 
 def place_values_in_dataframe(soup_countries_list, soup_medals_list, year_in_series, df_total_results):
