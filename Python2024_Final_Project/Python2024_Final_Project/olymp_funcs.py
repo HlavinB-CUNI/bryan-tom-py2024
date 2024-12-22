@@ -37,7 +37,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
     for city, season in enumerate(df_filter2['seasons']):
         # If the season is summer
         if ((('summer' in season)) & (szn == 'summer')):
-            url_specific = f'{url_1}{url_2}{df_filter2['city'].iloc[city][0]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true'
+            url_specific = f"{url_1}{url_2}{df_filter2['city'].iloc[city][0]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true"
             location_in_series = df_filter2['city'].iloc[city][0]
             year_in_series = df_filter2.index[city]
 
@@ -50,7 +50,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
         # If the season is winter
         elif ((('winter' in season)) & (szn == 'winter')):
             if (len(df_filter2['city'].iloc[city]) == 1):
-                url_specific = f'{url_1}{url_2}{df_filter2['city'].iloc[city][0]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true'
+                url_specific = f"{url_1}{url_2}{df_filter2['city'].iloc[city][0]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true"
                 location_in_series = df_filter2['city'].iloc[city][0]
                 year_in_series = df_filter2.index[city]
                         
@@ -61,7 +61,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
                 df_total_results = place_values_in_dataframe(soup_countries_list, soup_medals_list, year_in_series, df_total_results)
 
             else:
-                url_specific = f'{url_1}{url_2}{df_filter2['city'].iloc[city][1]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true'
+                url_specific = f"{url_1}{url_2}{df_filter2['city'].iloc[city][1]}-{df_filter2.index[city]}/medals?displayAsWebViewlight=true&displayAsWebView=true"
                 location_in_series = df_filter2['city'].iloc[city][1]
                 year_in_series = df_filter2.index[city]
                 
