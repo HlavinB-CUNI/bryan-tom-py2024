@@ -19,6 +19,10 @@ starting_games, ending_games, season = ask_for_years(olymp_games)
 df_total = scrape_olympics_websites(starting_games, ending_games, season, df_olymp)
 print(df_total)
 
+# The dataframe returned will have all the countries that have participated in at least one Olympic games
+# between the two dates. If the country had not competed in any of the Olympic games, then the country will not show up.
+# Countries that appear in one Olympic games but not others will have 'NaN' types for variables in the other columns.
+
 # Step 6: Generating statistical tables based on dataframe
 
 
