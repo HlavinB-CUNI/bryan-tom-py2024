@@ -1,13 +1,7 @@
-import datetime
 import time
 import random
-from operator import index
 import numpy as np
 import pandas as pd
-import json
-import validators
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
 from scraping_funcs import bs_scrape
 
 # Forcing the python console to show all columns of a resulting dataframe
