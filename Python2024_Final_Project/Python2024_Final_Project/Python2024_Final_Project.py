@@ -19,4 +19,7 @@ starting_games, ending_games, season = ask_for_years(olymp_games)
 df_total = scrape_olympics_websites(starting_games, ending_games, season, df_olymp)
 print(df_total)
 
-#
+# Step 6: Generating statistical tables based on dataframe
+
+
+# Step 7: Calculating concluding statistics
