@@ -73,7 +73,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
                 
     # making all "-" values into "0" values, and making " " values into "NaN" values
     df_total_results = df_total_results.where(df_total_results != '-', '0')
-    df_total_results = df_total_results.where(df_total_results != ' ', 'NaN')
+    df_total_results = df_total_results.where(df_total_results != '', np.nan)
 
     # Setting 'Country' as the index value
     df_total_results.set_index('Country', inplace = True)
