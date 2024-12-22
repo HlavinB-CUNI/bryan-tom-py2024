@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Python2024_Final_Project.py" />
+    <Compile Include="scraping_funcs.py" />
     <Compile Include="user_questions.py" />
   </ItemGroup>
   <ItemGroup>
