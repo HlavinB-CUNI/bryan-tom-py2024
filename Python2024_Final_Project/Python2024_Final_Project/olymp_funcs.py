@@ -93,11 +93,13 @@ def place_values_in_dataframe(soup_countries_list, soup_medals_list, year_in_ser
             df_total_results.loc[country_match[0], f'{year_in_series}_total'] = soup_medals_list[4*(i-1)+3]
                         
         else:
-            df_total_results = df_total_results.append({'Country': soup_countries_list[i-1], 
-                                                        f'{year_in_series}_gold': soup_medals_list[4*(i-1)],     \
-                                                        f'{year_in_series}_silver': soup_medals_list[4*(i-1)+1], \
-                                                        f'{year_in_series}_bronze': soup_medals_list[4*(i-1)+2], \
-                                                        f'{year_in_series}_total': soup_medals_list[4*(i-1)+3]}, ignore_index = True)
+            new_row = pd.DataFrame([{
+                'Country': soup_countries_list[i-1],
+                'Medals': soup_medals_list[i-1],
+                'Year': year_in_series
+                }])
+            df_total_results = pd.concat([df_total_results, new_row], ignore_index=True)
+
      
      # Loop pauser just in case the website freaks out from scraping too fast
      time.sleep(random.uniform(0.10, 0.85))
