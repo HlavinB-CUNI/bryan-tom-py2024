@@ -7,7 +7,7 @@ numexpr
 numpy
 pandas
 python-dateutil  
-pytz @
+pytz
 setuptools==72.1.0
 six
 soupsieve 
