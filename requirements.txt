@@ -1,0 +1,15 @@
+beautifulsoup4 
+Bottleneck
+mkl-service==2.4.
+mkl_fft
+mkl_random
+numexpr
+numpy
+pandas
+python-dateutil  
+pytz @
+setuptools==72.1.0
+six
+soupsieve 
+tzdata 
+wheel==0.44.0
