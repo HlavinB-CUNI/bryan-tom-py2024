@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Python2024_Final_Project</Name>
     <RootNamespace>Python2024_Final_Project</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|313_env</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +29,9 @@
   <ItemGroup>
     <Content Include="olymp_funcs.py" />
     <Content Include="olymp_games.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|313_env" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

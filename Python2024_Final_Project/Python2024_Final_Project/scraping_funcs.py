@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 
+
 def bs_scrape(url_specific, location_in_series):
     # Parsing
     req = Request(
