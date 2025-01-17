@@ -21,11 +21,11 @@ df_olymp = pd.DataFrame.transpose(pd.DataFrame.from_dict(olymp_games['olympic_ga
 database_exists = check_for_json_database()
           
 # Step 4-5: Begin Scraping Process if needed - Index for resulting dataframe is 'Country'
-if database_exists == False:
-    df_total = scrape_olympics_websites(df_olymp)
-else:
+#if database_exists == False:
+df_total = scrape_olympics_websites(df_olymp)
+#else:
     #open json and get dataframe
-    print("hi")
+    #print("hi")
 
 print(df_total)
 

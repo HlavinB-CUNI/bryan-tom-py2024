@@ -65,7 +65,7 @@ def scrape_olympics_websites(df_olymp):
             soup_countries_list, soup_medals_list = bs_scrape(url_specific, location_in_series)
 
             # Placing values in dataframe
-            df_total_results = place_values_in_dataframe(soup_countries_list, soup_medals_list, year_in_series, df_total_results)
+            df_total_results = place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results)
             
             # Placing values in json file
             json_database_data = {
@@ -91,7 +91,7 @@ def scrape_olympics_websites(df_olymp):
     return df_total_results.sort_values('Country')
 
 
-def place_values_in_dataframe(soup_countries_list, soup_medals_list, year_in_series, df_total_results):
+def place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results):
      # Adding columns to the total dataframe for each year's olympic medal count
      df_total_results[f'{year_in_series}_gold'] = ''
      df_total_results[f'{year_in_series}_silver'] = ''
@@ -109,15 +109,18 @@ def place_values_in_dataframe(soup_countries_list, soup_medals_list, year_in_ser
             df_total_results.loc[country_match[0], f'{year_in_series}_total'] = soup_medals_list[4*(i-1)+3]
                         
         else:
-            new_row = pd.DataFrame([{
+            # Need to generate a dataframe to concat with, as append is no longer in use
+            df_total_results_new = pd.DataFrame([{
                 'Country': soup_countries_list[i-1],
-                'Medals': soup_medals_list[i-1],
-                'Year': year_in_series
+                f'{year_in_series}_gold': soup_medals_list[4*(i-1)],     
+                f'{year_in_series}_silver': soup_medals_list[4*(i-1)+1], 
+                f'{year_in_series}_bronze': soup_medals_list[4*(i-1)+2], 
+                f'{year_in_series}_total': soup_medals_list[4*(i-1)+3]
                 }])
-            df_total_results = pd.concat([df_total_results, new_row], ignore_index=True)
+            df_total_results = pd.concat([df_total_results, df_total_results_new], ignore_index=True)
 
      
      # Loop pauser just in case the website freaks out from scraping too fast
-     time.sleep(random.uniform(0.10, 0.85))
+     time.sleep(random.uniform(0.10, 0.60))
      
      return df_total_results    
