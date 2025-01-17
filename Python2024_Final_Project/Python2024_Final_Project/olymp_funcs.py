@@ -32,8 +32,9 @@ def is_valid_olympic_year(year, games_json):
         return False    
    
 
-def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
+def scrape_olympics_websites(df_olymp):
     print(f'Proceeding to scrape all olympics websites....')
+    print(' ')
     
     # Making an empty json dictionary
     with open("olymp_database.json", 'r') as f:
@@ -57,7 +58,7 @@ def scrape_olympics_websites(start_games, end_games, szn, df_olymp):
             location_in_series = loc
             year_in_series = df_filter1.index[index]
             season = df_filter1['seasons'].iloc[index][city.index(loc)]
-            print(f"Found {year_in_series} for {location_in_series} for the season {season}.")
+            print(f"Getting results: {year_in_series} - {location_in_series} - {season}")
             url_specific = f"{url_1}{url_2}{location_in_series}-{year_in_series}/medals?displayAsWebViewlight=true&displayAsWebView=true"
 
             # Gathering countries and medal counts

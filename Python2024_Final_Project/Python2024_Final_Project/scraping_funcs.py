@@ -11,7 +11,6 @@ def bs_scrape(url_specific, location_in_series):
     soup = BeautifulSoup(page, 'html.parser')
     
     # Gathering countries and medal counts
-    print(f"Getting {location_in_series} medals...")
     soup_countries_list = [tag.get_text() for tag in list(soup.find_all('span', attrs = {'data-cy':'country-name'}))]
     soup_medals_list = [tag.get_text() for tag in list(soup.find_all('span', attrs = {'data-cy':'ocs-text-module'}))]
     
