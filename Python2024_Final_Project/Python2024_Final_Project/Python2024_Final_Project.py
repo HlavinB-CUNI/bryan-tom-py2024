@@ -6,10 +6,6 @@ import json
 from olymp_funcs import check_for_json_database, scrape_olympics_websites
 from user_questions import ask_for_years
 
-# The dataframe returned will have all the countries that have participated in at least one Olympic games
-# between the two dates. If the country had not competed in any of the Olympic games, then the country will not show up.
-# Countries that appear in one Olympic games but not others will have 'NaN' types for variables in the other columns.
-# Countries are filtered alphabetically
 
 # Step 0: Reading in JSON file preliminarily (contains basic Olypmics data)
 f = open('olymp_games.json')
@@ -21,13 +17,8 @@ df_olymp = pd.DataFrame.transpose(pd.DataFrame.from_dict(olymp_games['olympic_ga
 database_exists = check_for_json_database()
           
 # Step 4-5: Begin Scraping Process if needed - Index for resulting dataframe is 'Country'
-#if database_exists == False:
 df_total = scrape_olympics_websites(df_olymp)
-#else:
-    #open json and get dataframe
-    #print("hi")
-
-print(df_total)
+# this is the dataframe with every result
 
 # ask user for filters for dataframe
 #starting_games, ending_games, season = ask_for_years(olymp_games) ...might not be needed!

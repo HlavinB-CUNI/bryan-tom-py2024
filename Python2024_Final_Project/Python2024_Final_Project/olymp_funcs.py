@@ -14,10 +14,10 @@ pd.set_option('display.max_columns', None)
 def check_for_json_database():
     # check to see if a file exists - if it doesn't then make it and perform all the scraping actions in the below function
     if os.path.isfile("olymp_database.json"):
-        print("The database for all olympic games exists...continuing without scraping any websites...")
+        print("The database for all olympic games exists...updating file with most recent info...")
         return True
     else:
-        print("The database for all olympic games does not exists...generating new file....")
+        print("The database for all olympic games does not exists...generating new file...")
         with open("olymp_database.json",'w') as f:
             f.write("{}")
             f.close()
@@ -48,7 +48,6 @@ def scrape_olympics_websites(df_olymp):
     # Making a dataframe from the dictionary (2 rows, 38 columns for every olympics)
     df_olymp.index = df_olymp.index.astype(int)
     df_filter1 = df_olymp.loc[pd.to_numeric(1896):pd.to_numeric(2024)]
-    #df_filter2 = df_filter1.loc[(df_filter1['seasons'].astype(str) == f"['{szn}']") | (df_filter1['seasons'].astype(str) == f"['summer', 'winter']")]
     
     df_total_results = pd.DataFrame(columns = ['Country'])
 
@@ -66,14 +65,20 @@ def scrape_olympics_websites(df_olymp):
 
             # Placing values in dataframe
             df_total_results = place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results)
-            
+            df_results_json = df_total_results.loc[:,['Country', f'{year_in_series}_gold', f'{year_in_series}_silver', f'{year_in_series}_bronze', f'{year_in_series}_total']].set_index('Country')
+            df_results_json = df_results_json.where(df_results_json != '-', '0')
+            df_results_json = df_results_json.where(df_results_json != '', np.nan)
+            df_results_json = df_results_json.sort_values('Country')
+            df_results_json = df_results_json.to_dict(orient = 'index')
+
             # Placing values in json file
             json_database_data = {
                                 f"{location_in_series}-{year_in_series}": 
                                 {
                                     "year": f"{year_in_series}",
                                     "city": f"{location_in_series}",
-                                    "season": f"{season}"
+                                    "season": f"{season}",
+                                    "results": f"{df_results_json}"
                                 }
                                 }
             olymp_data.update(json_database_data)
@@ -119,8 +124,5 @@ def place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, ye
                 }])
             df_total_results = pd.concat([df_total_results, df_total_results_new], ignore_index=True)
 
-     
      # Loop pauser just in case the website freaks out from scraping too fast
-     time.sleep(random.uniform(0.10, 0.60))
-     
      return df_total_results    
