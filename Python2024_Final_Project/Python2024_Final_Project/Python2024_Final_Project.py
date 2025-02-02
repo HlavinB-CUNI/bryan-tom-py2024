@@ -19,6 +19,7 @@ database_exists = check_for_json_database()
 # Step 4-5: Begin Scraping Process if needed - Index for resulting dataframe is 'Country'
 df_total = scrape_olympics_websites(df_olymp)
 # this is the dataframe with every result
+plot_medal_histogram(df_total)
 
 # ask user for filters for dataframe
 #starting_games, ending_games, season = ask_for_years(olymp_games) ...might not be needed!
