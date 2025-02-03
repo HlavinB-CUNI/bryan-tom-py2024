@@ -5,6 +5,7 @@ import pandas as pd
 import json
 from olymp_funcs import check_for_json_database, scrape_olympics_websites
 from user_questions import ask_for_years
+from graphing_func import plot_medal_histogram
 
 
 # Step 0: Reading in JSON file preliminarily (contains basic Olypmics data)

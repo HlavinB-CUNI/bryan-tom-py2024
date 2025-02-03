@@ -63,9 +63,9 @@ def scrape_olympics_websites(df_olymp):
             # Gathering countries and medal counts
             soup_countries_list, soup_medals_list = bs_scrape(url_specific, location_in_series)
 
-            # Placing values in dataframe
-            df_total_results = place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results)
-            df_results_json = df_total_results.loc[:,['Country', f'{year_in_series}_gold', f'{year_in_series}_silver', f'{year_in_series}_bronze', f'{year_in_series}_total']].set_index('Country')
+            # Placing values in json
+            df_total_results = place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results, season)
+            df_results_json = df_total_results.loc[:,['Country', f'{year_in_series}_gold_{season}', f'{year_in_series}_silver_{season}', f'{year_in_series}_bronze_{season}', f'{year_in_series}_total_{season}']].set_index('Country')
             df_results_json = df_results_json.where(df_results_json != '-', '0')
             df_results_json = df_results_json.where(df_results_json != '', np.nan)
             df_results_json = df_results_json.sort_values('Country')
@@ -96,31 +96,31 @@ def scrape_olympics_websites(df_olymp):
     return df_total_results.sort_values('Country')
 
 
-def place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results):
+def place_values_in_dataframe_and_json(soup_countries_list, soup_medals_list, year_in_series, df_total_results, season):
      # Adding columns to the total dataframe for each year's olympic medal count
-     df_total_results[f'{year_in_series}_gold'] = ''
-     df_total_results[f'{year_in_series}_silver'] = ''
-     df_total_results[f'{year_in_series}_bronze'] = ''
-     df_total_results[f'{year_in_series}_total'] = ''
+     df_total_results[f'{year_in_series}_gold_{season}'] = ''
+     df_total_results[f'{year_in_series}_silver_{season}'] = ''
+     df_total_results[f'{year_in_series}_bronze_{season}'] = ''
+     df_total_results[f'{year_in_series}_total_{season}'] = ''
                 
      # If the country in the medal list does not not appear yet, add it and add the medals - if it does appear, match it with the right row and add in the variabls for the new medals
      for i in range(len(soup_countries_list)):
         if soup_countries_list[i-1] in df_total_results['Country'].values:
             # Find the exact row it is in, and put the 4 values for each medal placement there
             country_match = df_total_results.index[(df_total_results['Country'] == soup_countries_list[i-1])].to_list()
-            df_total_results.loc[country_match[0], f'{year_in_series}_gold'] = soup_medals_list[4*(i-1)]
-            df_total_results.loc[country_match[0], f'{year_in_series}_silver'] = soup_medals_list[4*(i-1)+1]
-            df_total_results.loc[country_match[0], f'{year_in_series}_bronze'] = soup_medals_list[4*(i-1)+2]
-            df_total_results.loc[country_match[0], f'{year_in_series}_total'] = soup_medals_list[4*(i-1)+3]
+            df_total_results.loc[country_match[0], f'{year_in_series}_gold_{season}'] = soup_medals_list[4*(i-1)]
+            df_total_results.loc[country_match[0], f'{year_in_series}_silver_{season}'] = soup_medals_list[4*(i-1)+1]
+            df_total_results.loc[country_match[0], f'{year_in_series}_bronze_{season}'] = soup_medals_list[4*(i-1)+2]
+            df_total_results.loc[country_match[0], f'{year_in_series}_total_{season}'] = soup_medals_list[4*(i-1)+3]
                         
         else:
             # Need to generate a dataframe to concat with, as append is no longer in use
             df_total_results_new = pd.DataFrame([{
                 'Country': soup_countries_list[i-1],
-                f'{year_in_series}_gold': soup_medals_list[4*(i-1)],     
-                f'{year_in_series}_silver': soup_medals_list[4*(i-1)+1], 
-                f'{year_in_series}_bronze': soup_medals_list[4*(i-1)+2], 
-                f'{year_in_series}_total': soup_medals_list[4*(i-1)+3]
+                f'{year_in_series}_gold_{season}': soup_medals_list[4*(i-1)],     
+                f'{year_in_series}_silver_{season}': soup_medals_list[4*(i-1)+1], 
+                f'{year_in_series}_bronze_{season}': soup_medals_list[4*(i-1)+2], 
+                f'{year_in_series}_total_{season}': soup_medals_list[4*(i-1)+3]
                 }])
             df_total_results = pd.concat([df_total_results, df_total_results_new], ignore_index=True)
 
