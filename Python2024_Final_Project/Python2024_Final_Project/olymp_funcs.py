@@ -29,7 +29,13 @@ def is_valid_olympic_year(year, games_json):
     if (year in games_json['olympic_games_year'].keys()):
         return True
     else:
-        return False    
+        return False   
+    
+def is_valid_olympic_country(country, df_total):
+    if country.lower() in (index.lower() for index in df_total.index):
+        return True
+    else:
+        return False  
    
 
 def scrape_olympics_websites(df_olymp):
