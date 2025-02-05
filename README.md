@@ -7,17 +7,12 @@ Topic approved 28.11.2024.
 
 The goal of this repository is to do the following: 
 
-1 Prompt the user, asking which Olympic games the user would like to start with (earliest) and end with (recent).
+1 Program will scrape every Olympics medal count from the official website database
 
-2 The user inputs the years, returning not valid and to try again if a year is invalid.
+2 Data from each Olympics year and location will be inserted into a dataframe
 
-3 If a valid set of years, the program will determine automatically if the user wants summer games or winter games recorded.
+3 User is prompted to ask whether or not they want to see a specific country's medals over time, or if they want a specific Olympic's medal count
 
-4 Program will then scrape every website necessary in the series (or individually) 
-
-5 The data from each website will be filtered accordingly, and inserted into a data frame
-
-6 Data frame will be used to generate graphics for comparison between countries (graphics for rankings over the years, plot of average ranking throughout the years)
-
-7 Concluding statistics (medal count total, medal count average, etc.) will be printed 
+4 Graph as per the user's request is generated
+ 
     
