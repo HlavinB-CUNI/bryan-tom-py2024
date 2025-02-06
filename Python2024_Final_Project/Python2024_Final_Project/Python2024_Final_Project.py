@@ -25,4 +25,5 @@ print(df_total)
 
 # Step 3-4: Prompt User on What They Want to See and Make Graphs
 ask_for_year_or_country(olymp_games, df_total)
+plot_medal_histogram(df_total= any, szn= any, year= any, country= any)
 

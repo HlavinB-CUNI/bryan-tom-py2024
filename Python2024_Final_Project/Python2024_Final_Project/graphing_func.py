@@ -35,8 +35,29 @@ def plot_medal_histogram(df_total, szn, year, country):
     # Graphing for a Country's Medals Over Time
     else:
         country = country.lower()
-        df_lowercase = df_total.copy()
-        df_lowercase.index = df_lowercase.index.str.lower()
-        print(df_lowercase.loc[f'{country}'])
+        df_total.index = df_total.index.str.lower()  # Ensure indexes are lowercase
+        if country not in df_total.index:
+            print(f"Country '{country}' not found in the dataset.")
+            return
+
+        # Select only columns related to the chosen season
+        medal_columns = df_total.filter(like=f'_total_{szn}').columns
+        df_country = df_total.loc[country, medal_columns]
         
-        # GRPAHING GOES HERE
+        # Extract years from column names
+        years = [int(col.split('_')[0]) for col in medal_columns]
+        medals = df_country.fillna(0).astype(int).values  # Replace NaN with 0 before converting
+
+
+        plt.figure(figsize=(10, 5))
+        plt.plot(years, medals, marker='o', linestyle='-', color='blue', label='Total Medals')
+
+        plt.xlabel('Year')
+        plt.ylabel('Total Medals')
+        plt.title(f'Medals Won by {country.capitalize()} Over Time ({szn.capitalize()})')
+        plt.xticks(years, rotation=45)
+        plt.grid(True)
+        plt.legend()
+        plt.show()
+        
+        
