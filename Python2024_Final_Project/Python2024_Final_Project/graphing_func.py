@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 def plot_medal_histogram(df_total, szn, year, country):
     """
@@ -24,12 +25,21 @@ def plot_medal_histogram(df_total, szn, year, country):
         top_countries = df_total_sorted.head(10)
 
         # Plotting
+        sns.set(style="whitegrid")
         plt.figure(figsize=(12, 6))
-        plt.bar(top_countries.index, top_countries[f'{year}_total_{szn}'], color='gold')
-        plt.xlabel('Country')
-        plt.ylabel('results')
-        plt.title('Top 10 Countries by Total Medals')
-        plt.xticks(rotation=45)
+        sns.barplot(x=top_countries.index, y=top_countries[f'{year}_total_{szn}'], palette='Blues')
+        plt.xlabel('Country', fontsize=14, fontweight='bold')
+        plt.ylabel('Total Medals', fontsize=14, fontweight='bold')
+        plt.title(f'Top 10 Countries by Total Medals in {year} ({szn.capitalize()} Olympics)', fontsize=16, fontweight='bold')
+        
+        for index, value in enumerate(top_countries[f'{year}_total_{szn}']):
+            plt.text(index, value + 0.5, str(value), ha='center', fontsize=12, fontweight='bold')
+            
+        plt.xticks(rotation=45, fontsize=12)
+        plt.yticks(fontsize=12)
+        plt.grid(True, axis='y', linestyle='--', alpha=0.7)
+        plt.tight_layout()
+        
         plt.show()
         
     # Graphing for a Country's Medals Over Time
@@ -48,16 +58,27 @@ def plot_medal_histogram(df_total, szn, year, country):
         years = [int(col.split('_')[0]) for col in medal_columns]
         medals = df_country.fillna(0).astype(int).values  # Replace NaN with 0 before converting
 
-
+        sns.set(style="whitegrid")
         plt.figure(figsize=(10, 5))
-        plt.plot(years, medals, marker='o', linestyle='-', color='blue', label='Total Medals')
+        plt.plot(years, medals, marker='o', linestyle='-', color='darkorange', linewidth=2, markersize=8, markerfacecolor='darkred')
+        plt.xlabel('Year', fontsize=14, fontweight='bold')
+        plt.ylabel('Total Medals', fontsize=14, fontweight='bold')
+        plt.title(f'Medals Won by {country.capitalize()} Over Time ({szn.capitalize()})', fontsize=16, fontweight='bold')
+    
+        max_year = years[medals.argmax()]
+        min_year = years[medals.argmin()]
+    
+        plt.annotate(f"Peak: {medals.max()} medals", xy=(max_year, medals.max()), xytext=(max_year + 1, medals.max() + 1),
+                 arrowprops=dict(arrowstyle="->", lw=1), fontsize=12, fontweight='bold')
+        plt.annotate(f"Valley: {medals.min()} medals", xy=(min_year, medals.min()), xytext=(min_year + 1, medals.min() - 1),
+                 arrowprops=dict(arrowstyle="->", lw=1), fontsize=12, fontweight='bold')
 
-        plt.xlabel('Year')
-        plt.ylabel('Total Medals')
-        plt.title(f'Medals Won by {country.capitalize()} Over Time ({szn.capitalize()})')
-        plt.xticks(years, rotation=45)
-        plt.grid(True)
-        plt.legend()
+        plt.xticks(years, rotation=45, fontsize=12)
+        plt.yticks(fontsize=12)
+        plt.grid(True, linestyle='--', alpha=0.6)
+        plt.legend(['Total Medals'], loc='best', fontsize=12)
+        plt.tight_layout()
+
         plt.show()
         
         
